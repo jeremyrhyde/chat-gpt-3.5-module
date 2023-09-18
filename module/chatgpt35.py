@@ -9,12 +9,22 @@ from viam.resource.types import Model, ModelFamily
 
 class MyChatGPTInstance(Generic):
     MODEL: ClassVar[Model] = Model(ModelFamily("jeremyrhyde", "generic"), "chatgpt")
+    SUPPORTED_VERSIONS = ["gpt-3.5-turbo"]
 
+    # Constructor
     @classmethod
-    def new(cls, config: ComponentConfig, dependencies: Mapping[ResourceName, ResourceBase]):
-        chatGPTInstance = cls(config.name)
+    def new(self, config: ComponentConfig, dependencies: Mapping[ResourceName, ResourceBase]):
+        chatGPTInstance = self(config.name)
         chatGPTInstance.reconfigure(config, dependencies)
         return chatGPTInstance
+    
+    # Validates JSON Configuration
+    @classmethod
+    def validate(self, config: ComponentConfig):
+        version = config.attributes.fields["chat_gpt_version"].string_value
+        if version not in self.SUPPORTED_VERSIONS:
+            raise Exception("chat_gpt_version must be one of the follow: " + self.SUPPORTED_VERSIONS)
+        return
 
     # Reconfigure module by resetting chat gpt connection
     def reconfigure(self, config: ComponentConfig, dependencies: Mapping[ResourceName, ResourceBase]):
@@ -34,8 +44,8 @@ class MyChatGPTInstance(Generic):
             print("not a valid request")
             raise Exception("invalid request, no 'input' given") 
         
-        s = command["input"]
-        resp = {"response": s}
+        cmd = command["input"]
+        resp = {"response": cmd}
         return resp
     
     def setup():

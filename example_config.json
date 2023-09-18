@@ -5,7 +5,7 @@
         "type": "generic",
         "model": "jeremyrhyde:generic:chatgpt",
         "attributes": {
-          "chat_gpt_version": "chat-gpt-3.5-turbo",
+          "chat_gpt_version": "gpt-3.5-turbo",
           "setup": true
         },
         "depends_on": []
