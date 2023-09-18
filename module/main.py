@@ -4,7 +4,7 @@ import sys
 from viam.module.module import Module
 from viam.components.generic import Generic
 
-from .chatgpt35 import MyChatGPTInstance
+from .chatgpt import MyChatGPTInstance
 
 
 async def main(address: str):
