@@ -91,7 +91,7 @@ The response will be returned as a protobuf Struct. It will have a field `reply`
 Should you encounter issues using this module. You can run the underlying chat-gpt.py code separately from the rest of a Viam server by either running:
 
 
- - ```sh python3 module/chat-gpt.py ```
- - ```sh ./exec.sh 0 ```
+ - ```python3 module/chat-gpt.py ```
+ - ```./exec.sh 0 ```
 
  This should allow better logging and a similar framework for debugging your connection to Chat-GPT or potential malformations in your requests and responses. 
