@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "viam-sdk"
+name = "chat-gpt-module"
 version = "0.5.1"
-description = "Viam Robotics Python SDK"
-authors = [ "Naveed <naveed@viam.com>" ]
+description = "Chat GPT Model for NLP"
+authors = [ "Jeremy Hyde <jeremy@viam.com>" ]
 license = "Apache-2.0"
 readme = "README.md"
 packages = [
