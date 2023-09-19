@@ -1,2 +1,1 @@
-chat-gpt:
-  api_key: "hello"
+chat-gpt: "hello"

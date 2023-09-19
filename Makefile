@@ -6,4 +6,4 @@ TAG_VERSION?=$(shell git tag --points-at | sort -Vr | head -n1)
 
 .PHONY: setup
 setup:
-	brew install mavsdk && pip3 install viam-sdk pyyaml
+	brew install mavsdk && pip3 install viam-sdk pyyaml openai
