@@ -98,10 +98,10 @@ class MyChatGPTInstance(Generic):
                 messages=self.messages
             )
 
-            # Contruct response
+            # Construct response
             resp = {
-                "response": chat.choices[0].message.content,
-                "timestamp": self.lastTime
+                "response": str(chat.choices[0].message.content),
+                "timestamp": str(self.lastTime)
             }
         except Exception as e:
             self.LOGGER.warn("issue occured interfacing with chat-gpt: " + str(e) + "\n")

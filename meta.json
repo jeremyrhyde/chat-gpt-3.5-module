@@ -1,0 +1,13 @@
+{
+  "module_id": "jeremyrhyde:chat-gpt-module",
+  "visibility": "public",
+  "url": "https://github.com/jeremyrhyde/chat-gpt-module",
+  "description": "A Chat GPT integration to Viam that utilizes the DoCommand on the generic component",
+  "models": [
+    {
+      "api": "rdk:components:generic",
+      "model": "jeremyrhyde:npl:chat-gpt-module"
+    }
+  ],
+  "entrypoint": "exec.sh"
+}
