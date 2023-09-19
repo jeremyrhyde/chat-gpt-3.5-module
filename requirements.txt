@@ -1,5 +1,2 @@
 viam-sdk
 openai
-pyyaml
-poetry
-flake8

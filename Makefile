@@ -22,3 +22,7 @@ lint:
 .PHONY: install
 install:
 	pip install -r requirements.txt
+
+.PHONY: module.tar.gz
+module.tar.gz:
+	tar czf $@ *.sh .env module requirements.txt
