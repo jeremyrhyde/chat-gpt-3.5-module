@@ -7,7 +7,7 @@
         "attributes": {
           "chat_gpt_version": "gpt-3.5-turbo",
           "request_key": "request",
-          "api_key": "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",
+          "api_key": "<CHAT GPT API KEY>",
           "timeout": 60
         },
         "depends_on": []

@@ -3,12 +3,12 @@ from datetime import datetime, timedelta
 import json
 import sys
 import openai
-from typing import ClassVar, Mapping, Optional
+from typing import List, ClassVar, Mapping, Optional
 
 from viam.components.generic import Generic
 from viam.components.component_base import ValueTypes
 from viam.proto.app.robot import ComponentConfig, RobotConfig
-from viam.proto.common import ResourceName
+from viam.proto.common import ResourceName, Geometry
 from viam.resource.base import ResourceBase
 from viam.resource.types import Model, ModelFamily
 from viam.logging import getLogger
@@ -104,7 +104,7 @@ class MyChatGPTInstance(Generic):
                 "timestamp": self.lastTime
             }
         except Exception as e:
-            self.LOGGER.warn("issue occured interfacing with chat-gpt: " + e)
+            self.LOGGER.warn("issue occured interfacing with chat-gpt: " + str(e) + "\n")
             resp = {
                 "response": "Unable to reach ChatGPT. Request was " + input["request"],
                 "timestamp": self.lastTime
@@ -119,6 +119,10 @@ class MyChatGPTInstance(Generic):
         self.messages = [{"role": "system", "content": "You are a intelligent assistant."}]
         self.lastTime = datetime.now()
         return
+    
+    @classmethod
+    async def get_geometries(self) -> List[Geometry]:
+        return 
 
 
 async def main():
