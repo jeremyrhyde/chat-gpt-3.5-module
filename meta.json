@@ -5,7 +5,7 @@
   "description": "A Chat GPT integration to Viam that utilizes the DoCommand on the generic component",
   "models": [
     {
-      "api": "rdk:components:generic",
+      "api": "rdk:component:generic",
       "model": "jeremyrhyde:npl:chat-gpt-module"
     }
   ],
